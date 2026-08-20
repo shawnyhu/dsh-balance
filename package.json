@@ -1,0 +1,55 @@
+{
+  "name": "dsh-balance",
+  "version": "0.1.0",
+  "description": "Show your DeepSeek API balance in the sidebar. · 在侧边栏显示 DeepSeek API 余额。",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "ShawnHu <https://github.com/shawnyhu>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnyhu/dsh-balance.git"
+  },
+  "homepage": "https://github.com/shawnyhu/dsh-balance#readme",
+  "bugs": {
+    "url": "https://github.com/shawnyhu/dsh-balance/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "balance",
+    "usage",
+    "sidebar"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Build artifacts (this plugin ships prebuilt halves; nothing to build)
+dist/
+build/
+out/
+
+# Test coverage
+coverage/
+
+# Local env
+.env
+.env.*
