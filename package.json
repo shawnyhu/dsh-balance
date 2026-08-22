@@ -27,6 +27,12 @@
   "engines": {
     "node": ">=20"
   },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check client/client.js && node --check tests/balance-guard.mjs && node --check tests/balance-smoke.mjs",
+    "test": "node tests/balance-guard.mjs",
+    "test:guard": "node tests/balance-guard.mjs",
+    "test:smoke": "node tests/balance-smoke.mjs"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./client/client.js",

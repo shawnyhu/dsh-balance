@@ -71,8 +71,9 @@ window.__ModuleLoader__.load({
 						});
 						if (!res.ok) throw new Error("HTTP " + res.status);
 						const data = await res.json();
+						if (cancelled) return;
 						dataRef.current = data;
-						if (!cancelled) setSnapshot({ phase: "done", data, error: null });
+						setSnapshot({ phase: "done", data, error: null });
 					} catch (error) {
 						if (cancelled) return;
 						const data = dataRef.current;

@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a problem with the dsh-balance plugin
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report. Please include enough detail for us to reproduce it.
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DSH version
+      description: Output of `dsh --version`
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: The value in `package.json` (`version`)
+    validations:
+      required: true
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: How did you install the plugin?
+      options:
+        - "dsh plugin --profile web add <path>"
+        - Manual / Desktop (copy + edit package.json)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug — what you expected and what you saw.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproducer
+      description: Steps to reproduce, and any relevant logs or screenshots (redact any API keys).
